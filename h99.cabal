@@ -7,7 +7,7 @@ synopsis:            Take for https://wiki.haskell.org/H-99:_Ninety-Nine_Haskell
 -- description:
 homepage:            https://github.com/antonkorovin/99_haskell_problems
 -- license:
-license-file:        LICENSE
+-- license-file:        LICENSE
 author:              Anton Korovin
 maintainer:          korovin.anton@gmail.com
 -- copyright:
@@ -17,7 +17,8 @@ build-type:          Simple
 cabal-version:       >=1.10
 
 library
-  -- exposed-modules:
+  hs-source-dirs: src
+  exposed-modules: H99.Q01
   -- other-modules:
   -- other-extensions:
   build-depends:       base >=4.6 && <4.7
