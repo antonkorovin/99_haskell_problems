@@ -1,4 +1,6 @@
-module H99.Q01 where
+module H99.Q01 (
+  lastElementOf
+) where
 
 lastElementOf :: (Ord a) => [a] -> a
 lastElementOf [] = error "'last' of empty list"
