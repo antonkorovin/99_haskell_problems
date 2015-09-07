@@ -3,3 +3,6 @@ module H99.Q02 (
 ) where
 
 lastButOneOf :: [a] -> a
+lastButOneOf [] = error "'lastButOne' of empty list"
+lastButOneOf (lastButOneElement : _ : []) = lastButOneElement
+lastButOneOf (_:restOfList) = lastButOneOf restOfList
