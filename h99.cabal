@@ -16,7 +16,9 @@ cabal-version:       >=1.10
 library
   ghc-options      : -Wall
   hs-source-dirs   : src
-  exposed-modules  : H99.Q01
+  exposed-modules  :
+      H99.Q01
+    , H99.Q02
   build-depends    : base
   default-language : Haskell2010
 
@@ -33,3 +35,4 @@ test-suite spec
       base    == 4.*
     , h99
     , hspec   == 2.*
+  default-language : Haskell2010
