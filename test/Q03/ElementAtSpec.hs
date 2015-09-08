@@ -21,10 +21,13 @@ spec = do
       elementAt ['a'..'z'] 3 `shouldBe` ('c' :: Char)
 
     it "throws an exception if used index outs of list bounds (from rigth)" $ do
-      evaluate (elementAt [1..10] 11) `shouldThrow` errorCall "Out of bounds"
+      evaluate (elementAt [1..10] 11::Int) `shouldThrow` errorCall "Out of bounds"
 
     it "throws an exception if used index outs of list bounds (from left)" $ do
-      evaluate (elementAt [1..10] 0) `shouldThrow` errorCall "Out of bounds"
+      evaluate (elementAt [1..10] 0::Int) `shouldThrow` errorCall "Out of bounds"
 
     it "throws an exception if used with an empty list" $ do
       evaluate (elementAt [] 1) `shouldThrow` errorCall "Out of bounds"
+
+    it "throws an exception if used with negative index" $ do
+      evaluate (elementAt ['a'..'z'] (-1)) `shouldThrow` errorCall "Illegal argument"
