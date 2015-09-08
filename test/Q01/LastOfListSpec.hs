@@ -21,4 +21,4 @@ spec = do
       lastElementOf [1..42] `shouldBe` (42 :: Int)
 
     it "throws an exception if used with an empty list" $ do
-      evaluate (lastElementOf []) `shouldThrow` anyException
+      evaluate (lastElementOf []) `shouldThrow` errorCall "Out of bounds"

@@ -3,6 +3,6 @@ module H99.Q01 (
 ) where
 
 lastElementOf :: [a] -> a
-lastElementOf [] = error "'last' of empty list"
+lastElementOf [] = error "Out of bounds"
 lastElementOf [oneElement] = oneElement
 lastElementOf (_:restOfList) = lastElementOf restOfList
