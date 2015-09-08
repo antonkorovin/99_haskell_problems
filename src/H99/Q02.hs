@@ -3,6 +3,6 @@ module H99.Q02 (
 ) where
 
 lastButOneOf :: [a] -> a
-lastButOneOf [] = error "'lastButOne' of empty list"
+lastButOneOf [] = error "Out of bounds"
 lastButOneOf (lastButOneElement : _ : []) = lastButOneElement
 lastButOneOf (_:restOfList) = lastButOneOf restOfList

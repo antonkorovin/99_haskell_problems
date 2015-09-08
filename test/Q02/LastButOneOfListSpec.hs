@@ -21,7 +21,7 @@ spec = do
       lastButOneOf ['a'..'z'] `shouldBe` ('y' :: Char)
 
     it "throws an exception if used with a list with one element" $ do
-      evaluate (lastButOneOf [1:: Int]) `shouldThrow` anyException
+      evaluate (lastButOneOf [1:: Int]) `shouldThrow` errorCall "Out of bounds"
 
     it "throws an exception if used with an empty list" $ do
-      evaluate (lastButOneOf []) `shouldThrow` anyException
+      evaluate (lastButOneOf []) `shouldThrow` errorCall "Out of bounds"
