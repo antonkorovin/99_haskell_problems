@@ -19,6 +19,7 @@ library
   exposed-modules  :
       H99.Q01
     , H99.Q02
+    , H99.Q03
   build-depends    : base
   default-language : Haskell2010
 
