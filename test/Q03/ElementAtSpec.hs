@@ -20,6 +20,9 @@ spec = do
     it "returns k-th element of a list" $ do
       elementAt ['a'..'z'] 3 `shouldBe` ('c' :: Char)
 
+    it "returns k-th element of an infinie list" $ do
+      elementAt [1..] 42 `shouldBe` (42 :: Int)
+
     it "throws an exception if used index outs of list bounds (from rigth)" $ do
       evaluate (elementAt [1..10] 11::Int) `shouldThrow` errorCall "Out of bounds"
 
