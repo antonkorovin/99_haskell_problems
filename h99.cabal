@@ -20,6 +20,7 @@ library
       H99.Q01
     , H99.Q02
     , H99.Q03
+    , H99.Q04
   build-depends    : base
   default-language : Haskell2010
 
