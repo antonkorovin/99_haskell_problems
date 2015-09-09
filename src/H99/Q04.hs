@@ -3,4 +3,5 @@ module H99.Q04 (
 ) where
 
 listLength :: [a] -> Integer
-listLength _ = error "Not implemented yet"
+listLength [] = 0
+listLength (_ : xs) = 1 + listLength xs
