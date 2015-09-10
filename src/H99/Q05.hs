@@ -3,4 +3,7 @@ module H99.Q05 (
 ) where
 
 reverseList :: [a] -> [a]
-reverseList xs = xs
+reverseList xs = reverseListImpl [] xs where
+    reverseListImpl :: [a] -> [a] -> [a]
+    reverseListImpl reversedList [] = reversedList
+    reverseListImpl reversedList (x:restOfList) = reverseListImpl (x : reversedList) restOfList
