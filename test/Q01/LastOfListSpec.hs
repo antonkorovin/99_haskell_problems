@@ -1,6 +1,6 @@
 module Q01.LastOfListSpec (spec, main) where
 
-import H99.Q01 (lastElementOf)
+import H99.Q01 (lastElementOf, lastElementOfUsingFold)
 
 
 import Test.Hspec
@@ -22,3 +22,10 @@ spec = do
 
     it "throws an exception if used with an empty list" $ do
       evaluate (lastElementOf []) `shouldThrow` errorCall "Out of bounds"
+
+  describe "lastElementOfUsingFold" $ do
+    it "returns the last element of a list" $ do
+      lastElementOfUsingFold [1..42] `shouldBe` (42 :: Int)
+
+    it "throws an exception if used with an empty list" $ do
+      evaluate (lastElementOfUsingFold []) `shouldThrow` errorCall "Out of bounds"
