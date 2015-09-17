@@ -3,7 +3,7 @@ module Q05.ReverseListSpec (spec, main) where
 import Test.Hspec
 
 
-import H99.Q05 (reverseList)
+import H99.Q05 (reverseList, reverseListUsingFold)
 
 -- `main` is here so that this module can be run from GHCi on its own.  It is
 -- not needed for automatic spec discovery.
@@ -24,3 +24,13 @@ spec = do
 
     it "returns reversed list for a particular list" $ do
         reverseList [1::Int,2..10] `shouldBe` [10::Int,9..1]
+
+  describe "reverseListUsingFold" $ do
+    it "returns [] for an empty list" $ do
+        reverseListUsingFold anEmptyList `shouldBe` anEmptyList
+
+    it "returns same list for a list with one element" $ do
+        reverseListUsingFold [1::Int] `shouldBe` [1::Int]
+
+    it "returns reversed list for a particular list" $ do
+        reverseListUsingFold [1::Int,2..10] `shouldBe` [10::Int,9..1]
