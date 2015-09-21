@@ -28,7 +28,7 @@ module H99.Q07 (
 -- []
 
 
-data NestedList a = Elem a | List [NestedList a]
+data NestedList a = Elem a | List [NestedList a] deriving Show
 
 
 flatten :: Ord a => NestedList a -> [a]
