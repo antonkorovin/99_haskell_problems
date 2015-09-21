@@ -1,6 +1,6 @@
-module H99.Q07 (
-    NestedList(Elem, List),
-    flatten
+module H99.Q07
+(   NestedList(Elem, List)
+,   flatten
 ) where
 
 
@@ -30,6 +30,8 @@ module H99.Q07 (
 
 data NestedList a = Elem a | List [NestedList a] deriving Show
 
-
 flatten :: Ord a => NestedList a -> [a]
-flatten _ = []
+flatten (List []) = []
+flatten (Elem e) = [e]
+flatten (List (x:xs)) = flatten x ++ flatten (List xs)
+
