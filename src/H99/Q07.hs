@@ -1,6 +1,7 @@
 module H99.Q07
 (   NestedList(Elem, List)
 ,   flatten
+,   flattenUsingFoldl
 ) where
 
 
@@ -34,4 +35,11 @@ flatten :: Ord a => NestedList a -> [a]
 flatten (List []) = []
 flatten (Elem e) = [e]
 flatten (List (x:xs)) = flatten x ++ flatten (List xs)
+
+
+
+flattenUsingFoldl :: Ord a => NestedList a -> [a]
+flattenUsingFoldl (List []) = []
+flattenUsingFoldl (Elem e) = [e]
+flattenUsingFoldl (List nestedList) =  foldl (\alreadyFlat x -> alreadyFlat ++ flatten x) [] nestedList
 
