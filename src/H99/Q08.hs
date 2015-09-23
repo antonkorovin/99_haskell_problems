@@ -16,4 +16,10 @@ module H99.Q08 (compress) where
 -- "abcade"
 
 compress :: Ord a => [a] -> [a]
-compress _ = []
+compress [] = []
+compress (x : []) = [x]
+compress  list = reverse $ foldl compressFunc [head list] (tail list) where
+    compressFunc :: Ord b => [b] -> b -> [b]
+    compressFunc xs h
+        | h == head xs = xs
+        | otherwise = h : xs
