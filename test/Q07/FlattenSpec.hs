@@ -39,3 +39,13 @@ spec = do
     it "returns flatten list for multy-level list" $ do
         flattenUsingFoldl (List [Elem '1', List [Elem '2', List [Elem '3', Elem '4'], Elem '5']]) `shouldBe` ['1', '2', '3', '4', '5']
 
+  describe "flattenUsingFoldr" $ do
+    it "returns the same for an empty list" $ do
+        flattenUsingFoldr anEmptyNestedList `shouldBe` anEmptyList
+
+    it "returns list with one element for 'Elem'" $ do
+        flattenUsingFoldr (Elem 'a') `shouldBe` ['a']
+
+    it "returns flatten list for multy-level list" $ do
+        flattenUsingFoldr (List [Elem '1', List [Elem '2', List [Elem '3', Elem '4'], Elem '5']]) `shouldBe` ['1', '2', '3', '4', '5']
+

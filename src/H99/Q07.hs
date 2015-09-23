@@ -2,6 +2,7 @@ module H99.Q07
 (   NestedList(Elem, List)
 ,   flatten
 ,   flattenUsingFoldl
+,   flattenUsingFoldr
 ) where
 
 
@@ -42,4 +43,9 @@ flattenUsingFoldl :: Ord a => NestedList a -> [a]
 flattenUsingFoldl (List []) = []
 flattenUsingFoldl (Elem e) = [e]
 flattenUsingFoldl (List nestedList) =  foldl (\alreadyFlat x -> alreadyFlat ++ flatten x) [] nestedList
+
+
+flattenUsingFoldr :: Ord a => NestedList a -> [a]
+flattenUsingFoldr (Elem x ) = [x]
+flattenUsingFoldr (List xs) =  foldr (++) [] $ map flattenUsingFoldr xs
 
