@@ -3,6 +3,7 @@ module H99.Q07
 ,   flatten
 ,   flattenUsingFoldl
 ,   flattenUsingFoldr
+,   flattenUsingConcatMap
 ) where
 
 
@@ -49,3 +50,6 @@ flattenUsingFoldr :: Ord a => NestedList a -> [a]
 flattenUsingFoldr (Elem x ) = [x]
 flattenUsingFoldr (List xs) =  foldr (++) [] $ map flattenUsingFoldr xs
 
+flattenUsingConcatMap :: Ord a => NestedList a -> [a]
+flattenUsingConcatMap (Elem x) = [x]
+flattenUsingConcatMap (List x) = concatMap flatten x

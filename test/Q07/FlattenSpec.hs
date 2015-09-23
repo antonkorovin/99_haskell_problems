@@ -49,3 +49,12 @@ spec = do
     it "returns flatten list for multy-level list" $ do
         flattenUsingFoldr (List [Elem '1', List [Elem '2', List [Elem '3', Elem '4'], Elem '5']]) `shouldBe` ['1', '2', '3', '4', '5']
 
+  describe "flattenUsingConcatMap" $ do
+    it "returns the same for an empty list" $ do
+        flattenUsingConcatMap anEmptyNestedList `shouldBe` anEmptyList
+
+    it "returns list with one element for 'Elem'" $ do
+        flattenUsingConcatMap (Elem 'a') `shouldBe` ['a']
+
+    it "returns flatten list for multy-level list" $ do
+        flattenUsingConcatMap (List [Elem '1', List [Elem '2', List [Elem '3', Elem '4'], Elem '5']]) `shouldBe` ['1', '2', '3', '4', '5']
